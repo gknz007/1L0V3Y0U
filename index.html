@@ -137,7 +137,7 @@
 
         function lloverCorazones() {
             if (corazonCount < maxCorazones) {
-                const cantidad = Math.min(20 - corazonCount, 20); // Genera hasta el máximo permitido
+                const cantidad = Math.min(maxCorazones - corazonCount, 20); // Genera hasta el máximo permitido
                 for (let i = 0; i < cantidad; i++) {
                     let corazon = document.createElement('div');
                     corazon.classList.add('corazon');
@@ -156,6 +156,26 @@
                 alert("¡Ya no se pueden generar más corazones!");
             }
         }
+
+        // Añadir estrellas en las esquinas
+        function añadirEstrellas() {
+            const estrellas = [
+                { className: 'estrella estrella-1', src: 'https://example.com/estrella1.png' },
+                { className: 'estrella estrella-2', src: 'https://example.com/estrella2.png' },
+                { className: 'estrella estrella-3', src: 'https://example.com/estrella3.png' },
+                { className: 'estrella estrella-4', src: 'https://example.com/estrella4.png' }
+            ];
+
+            estrellas.forEach(estrella => {
+                let estrellaElem = document.createElement('img');
+                estrellaElem.className = estrella.className;
+                estrellaElem.src = estrella.src;
+                document.body.appendChild(estrellaElem);
+            });
+        }
+
+        // Llamar a la función para añadir estrellas al cargar la página
+        window.onload = añadirEstrellas;
     </script>
 </body>
 </html>
