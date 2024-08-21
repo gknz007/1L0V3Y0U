@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Niño Hermoso</title>
+    <title>Mi Niño hermoso</title>
     <style>
         body {
             background: rgb(0,24,36);
@@ -14,87 +14,81 @@
             text-align: center;
             position: relative;
             padding-bottom: 70px;
-            color: #fff; /* Cambiar el color del texto a blanco para mejor contraste */
+            font-size: 1rem;
         }
 
         h1 {
+            color: #333;
             margin-top: 20px;
-            font-size: 2em;
+            font-size: 2rem;
         }
 
         p {
+            color: #555;
             margin: 20px;
             line-height: 1.6;
-            font-size: 1em;
+            font-size: 1rem;
         }
 
         .imagenes {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 20px;
             margin: 20px;
+            flex-wrap: wrap;
         }
 
         .imagenes img {
-            width: 100%;
-            max-width: 300px;
+            width: 50%; /* Ajusta el tamaño según lo necesites */
+            max-width: 200px;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .estrella {
             position: absolute;
-            width: 40px;
+            width: 50px;
             height: auto;
-            animation: parpadeo 2s infinite;
         }
 
         .estrella-1 {
-            top: 20px;
-            left: 20px;
+            top: 10px;
+            left: 10px;
         }
 
         .estrella-2 {
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
         }
 
         .estrella-3 {
-            bottom: 20px;
-            left: 20px;
+            bottom: 10px;
+            left: 10px;
         }
 
         .estrella-4 {
-            bottom: 20px;
-            right: 20px;
+            bottom: 10px;
+            right: 10px;
         }
 
-        @keyframes parpadeo {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        /* Estilos responsivos */
         @media (max-width: 600px) {
+            .imagenes {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .imagenes img {
+                width: 80%;
+                max-width: none;
+            }
+
             h1 {
-                font-size: 1.5em;
-                margin-top: 15px;
+                font-size: 24px;
             }
 
             p {
-                font-size: 0.9em;
-                margin: 15px;
-            }
-
-            .imagenes {
-                gap: 15px;
-                margin: 15px;
-            }
-
-            .estrella {
-                width: 30px;
+                font-size: 16px;
+                margin: 10px;
             }
         }
     </style>
@@ -108,14 +102,13 @@
         <img src="https://i.pinimg.com/236x/56/f7/f3/56f7f358d7100ceac5426e6056193277.jpg" alt="Imagen 3">
     </div>
     
-    <p>Mi niño hermoso, te dedico esto desde el fondo de mi corazón. Estaré actualizando esto cada cierto tiempo a medida que voy aprendiendo nuevas cosas. Esta página y este espacio serán dedicados solo a ti y a lo mucho que te amo. Tenía guardada esta sorpresa para algún momento especial, pero como sé que no estás bien, te lo muestro ahora.</p>
-    <p>Eres fabuloso mi Sam :3, mi niño grandecito. Aún recuerdo con cariño cuando eras un niño bien chiquitito. Cuando me enamoré de ti, supe que tú eras la persona correcta con la cual quiero pasar mis días. Sé que quizás a veces las relaciones no suelen funcionar, pero estoy dispuesto a todo para que esto no muera.</p>
+    <p>Mi niño hermoso, te dedico esto desde el fondo de mi corazón, estare actualizando esto cada cierto tiempo a medida que voy aprendiendo nuevas cosas, esta pagina y este espacio sera dedicado solo a ti, y a lo mucho que te amo, tenia guardada esta sorpresa para algun momento especial, pero como se que no estas bien, te lo muestro ahora.</p>
+    <p>Eres fabuloso mi Sam :3, mi niño grandecito, aun recurdo con cariño cuando eras un niño bien chiquititio, cuando me enamore de ti, supe que tu eras la persona correcta, con la cual quiero pasar mis dias. se que quizas aveces las relaciones no suelen funcionar, pero estoy dispuesto a todo para que esto no muera.</p>
     <p>⸜(｡˃ ᵕ ˂ )⸝♡</p>
-    
     <!-- Estrellas en las esquinas -->
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Estrella 1" class="estrella estrella-1">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Estrella 2" class="estrella estrella-2">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Estrella 3" class="estrella estrella-3">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Estrella 4" class="estrella estrella-4">
+    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 1" class="estrella estrella-1">
+    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 2" class="estrella estrella-2">
+    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 3" class="estrella estrella-3">
+    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 4" class="estrella estrella-4">
 </body>
 </html>
