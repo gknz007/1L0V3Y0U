@@ -24,7 +24,7 @@
         }
 
         p {
-            color: white;
+            color: white; /* Cambiado a blanco */
             margin: 20px;
             line-height: 1.6;
             font-size: 1rem;
@@ -39,7 +39,7 @@
         }
 
         .imagenes img {
-            width: 50%;
+            width: 50%; /* Ajusta el tamaño según lo necesites */
             max-width: 200px;
             height: auto;
             border-radius: 10px;
@@ -71,6 +71,7 @@
             right: 10px;
         }
 
+        /* Estilo para el botón de corazón */
         .boton-corazon {
             background-color: pink;
             border: none;
@@ -90,22 +91,23 @@
         }
 
         .boton-corazon:hover {
-            background-color: red;
+            background-color: red; /* Cambia este color si lo deseas */
             transform: scale(1.1);
         }
 
+        /* Estilo para los corazones que llueven */
         .corazon {
             position: absolute;
             width: 30px;
             height: 30px;
             background-size: cover;
             background-position: center;
-            animation: llover 3s linear infinite;
+            animation: llover 3s linear;
         }
 
         @keyframes llover {
             from {
-                top: -50px;
+                top: -50px; /* Comienza desde lo más arriba posible */
             }
             to {
                 top: 100vh;
@@ -126,22 +128,32 @@
     <p>Eres fabuloso mi Sam :3, mi niño grandecito, aun recuerdo con cariño cuando eras un niño bien chiquitito, cuando me enamoré de ti, supe que tú eras la persona correcta, con la cual quiero pasar mis días. Sé que quizás a veces las relaciones no suelen funcionar, pero estoy dispuesto a todo para que esto no muera.</p>
     <p>⸜(｡˃ ᵕ ˂ )⸝♡</p>
     
+    <!-- Botón de corazón -->
     <button class="boton-corazon" onclick="lloverCorazones()">Botón de Amor</button>
 
     <script>
-        function lloverCorazones() {
-            const cantidad = 20;
-            for (let i = 0; i < cantidad; i++) {
-                let corazon = document.createElement('div');
-                corazon.classList.add('corazon');
-                corazon.style.backgroundImage = 'url("https://www.pngitem.com/pimgs/m/19-194414_red-heart-transparent-background-heart-png-image.png")'; // Cambia esta URL a la imagen del corazón que prefieras
-                corazon.style.left = Math.random() * 100 + 'vw';
-                corazon.style.animationDuration = 2 + Math.random() * 3 + 's';
-                document.body.appendChild(corazon);
+        let corazonCount = 0; // Contador de corazones generados
+        const maxCorazones = 20; // Máximo número de corazones
 
-                corazon.addEventListener('animationend', () => {
-                    corazon.remove();
-                });
+        function lloverCorazones() {
+            if (corazonCount < maxCorazones) {
+                const cantidad = Math.min(20 - corazonCount, 20); // Genera hasta el máximo permitido
+                for (let i = 0; i < cantidad; i++) {
+                    let corazon = document.createElement('div');
+                    corazon.classList.add('corazon');
+                    corazon.style.backgroundImage = 'url("https://www.pngitem.com/pimgs/m/19-194414_red-heart-transparent-background-heart-png-image.png")'; // Cambia esta URL a la imagen del corazón que prefieras
+                    corazon.style.left = Math.random() * 100 + 'vw'; // Posición horizontal aleatoria
+                    corazon.style.animationDuration = 2 + Math.random() * 3 + 's'; // Duración de la animación aleatoria
+                    document.body.appendChild(corazon);
+
+                    // Eliminar el corazón del DOM después de la animación
+                    corazon.addEventListener('animationend', () => {
+                        corazon.remove();
+                    });
+                }
+                corazonCount += cantidad; // Actualiza el contador de corazones
+            } else {
+                alert("¡Ya no se pueden generar más corazones!");
             }
         }
     </script>
