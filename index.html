@@ -24,7 +24,7 @@
         }
 
         p {
-            color: #555;
+            color: white;
             margin: 20px;
             line-height: 1.6;
             font-size: 1rem;
@@ -39,7 +39,7 @@
         }
 
         .imagenes img {
-            width: 50%; /* Ajusta el tamaño según lo necesites */
+            width: 50%;
             max-width: 200px;
             height: auto;
             border-radius: 10px;
@@ -71,7 +71,6 @@
             right: 10px;
         }
 
-        /* Estilo para el botón de corazón */
         .boton-corazon {
             background-color: pink;
             border: none;
@@ -95,23 +94,22 @@
             transform: scale(1.1);
         }
 
-        /* Estilo para los corazones que llueven */
-        @keyframes llover {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(100vh);
-            }
-        }
-
         .corazon {
-            position: fixed;
+            position: absolute;
             width: 30px;
             height: 30px;
-            background-color: black;
-            clip-path: polygon(50% 0%, 100% 30%, 80% 100%, 50% 75%, 20% 100%, 0% 30%);
+            background-size: cover;
+            background-position: center;
             animation: llover 3s linear infinite;
+        }
+
+        @keyframes llover {
+            from {
+                top: -50px;
+            }
+            to {
+                top: 100vh;
+            }
         }
     </style>
 </head>
@@ -127,26 +125,20 @@
     <p>Mi niño hermoso, te dedico esto desde el fondo de mi corazón, estaré actualizando esto cada cierto tiempo a medida que voy aprendiendo nuevas cosas, esta página y este espacio será dedicado solo a ti, y a lo mucho que te amo, tenía guardada esta sorpresa para algún momento especial, pero como sé que no estás bien, te lo muestro ahora.</p>
     <p>Eres fabuloso mi Sam :3, mi niño grandecito, aun recuerdo con cariño cuando eras un niño bien chiquitito, cuando me enamoré de ti, supe que tú eras la persona correcta, con la cual quiero pasar mis días. Sé que quizás a veces las relaciones no suelen funcionar, pero estoy dispuesto a todo para que esto no muera.</p>
     <p>⸜(｡˃ ᵕ ˂ )⸝♡</p>
-    <!-- Estrellas en las esquinas -->
-    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 1" class="estrella estrella-1">
-    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 2" class="estrella estrella-2">
-    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 3" class="estrella estrella-3">
-    <img src="https://cdn-icons-png.flaticon.com/512/16/16666.png" alt="Estrella 4" class="estrella estrella-4">
-
-    <!-- Botón de corazón -->
+    
     <button class="boton-corazon" onclick="lloverCorazones()">Botón de Amor</button>
 
     <script>
         function lloverCorazones() {
-            const cantidad = 20; // Cantidad de corazones que lloverán
+            const cantidad = 20;
             for (let i = 0; i < cantidad; i++) {
                 let corazon = document.createElement('div');
                 corazon.classList.add('corazon');
-                corazon.style.left = Math.random() * 100 + 'vw'; // Posición horizontal aleatoria
-                corazon.style.animationDuration = 2 + Math.random() * 3 + 's'; // Duración de la animación aleatoria
+                corazon.style.backgroundImage = 'url("https://www.pngitem.com/pimgs/m/19-194414_red-heart-transparent-background-heart-png-image.png")'; // Cambia esta URL a la imagen del corazón que prefieras
+                corazon.style.left = Math.random() * 100 + 'vw';
+                corazon.style.animationDuration = 2 + Math.random() * 3 + 's';
                 document.body.appendChild(corazon);
 
-                // Eliminar el corazón del DOM después de la animación
                 corazon.addEventListener('animationend', () => {
                     corazon.remove();
                 });
